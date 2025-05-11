@@ -22,6 +22,13 @@ class HeaderCib extends HTMLElement {
                 
                 i {
                     font-size: 2rem;
+                    color: #212529;
+                }
+
+                button {
+                    border: none;
+                    background: none;
+                    cursor: pointer;;
                 }
             </style>
             <header>
