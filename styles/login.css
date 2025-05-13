@@ -80,6 +80,26 @@
       text-decoration: none;
     }
 
+    .remember-senha {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      margin: -1px 0 15px;
+    }
+
+    .remember-senha label input {
+      accent-color: #2E7D32;
+    }
+
+      .remember-senha a {
+        text-decoration: none;
+        color: #45a049;
+
+      }
+      .remember-senha a:hover {
+        text-decoration: underline;
+      }
+
     .background {
   background-image: url('/imagens/onb.jpg'); /* imagem/fundo da página */
   background-size: cover;
