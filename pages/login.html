@@ -21,7 +21,33 @@
     </form>
     <div class="register">
       Não tem uma conta? <a href="#">Cadastre-se</a>
+      <p> ou </p>
+       </div>
+
+       <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+<div id="g_id_onload"
+     data-client_id="983027940944-2g5q8thsmba6ird2udqnnrociq3hmint.apps.googleusercontent.com"
+     data-context="signin"
+     data-ux_mode="popup"
+     data-callback="handleCredentialResponse"
+     data-auto_prompt="false">
+</div>
+
+<div class="g_id_signin"
+     data-type="standard"
+     data-shape="rectangular"
+     data-theme="filled_black"
+     data-text="signin_with"
+     data-size="large"
+     data-logo_alignment="left">
     </div>
   </div>
+  <script>
+  function handleCredentialResponse(response) {
+    console.log("ID Token: ", response.credential);
+    // Envio do token para o servidor validar/autenticar
+  }
+</script>
 </body>
 </html>
