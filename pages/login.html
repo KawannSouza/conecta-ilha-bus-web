@@ -4,60 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Faça Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" 
+    />
    <link rel="stylesheet" href="../styles/login.css">
-
-      
+   <script src="/js/header-cib.js" defer></script>
+   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
-   <div class="background">
-    <div class="overlay">
+    <header id="index-header">
+        <i class="fa-solid fa-bus"></i>
+    </header>
+    <main>
       <div class="login-container">
-        <img src="/imagens/icone-login.png"  alt="Ícone de login" style="display: block; margin: 10px auto; width: 100px;">
-    <h2>Login</h2>
-    <form action="/login" method="POST">
-      <input type="text" name="username" placeholder="Usuário" required />
-      <input type="password" name="password" placeholder="Senha" required />
-     
-      <div class="remember-senha">
-        <label>
-          <input type="checkbox">
-          Lembrar senha 
-      </label>
-      <a href="#">Esqueci a senha</a>
+        <h1>CIB<i class="fa-solid fa-bus"></i></h1>
+        <h2>Faça Login</h2>
+        <form>
+          <input id="email" type="text" placeholder="Digite seu email"/>
+          <input id="password" type="password" placeholder="Digite sua senha"/>
+          <button type="button" onclick="loginUser()">Entrar</button>
+        </form>
+        <p>Não tem uma conta? <a href="register.html">Cadastre-se</a></p>
       </div>
-     
-      <button type="submit">Entrar</button>
-      
-    </form>
-    <div class="register">
-      Não tem uma conta? <a href="#">Cadastre-se</a>
-      <p> ou </p>
-       </div>
-
-       <script src="https://accounts.google.com/gsi/client" async defer></script>
-
-<div id="g_id_onload"
-     data-client_id="983027940944-2g5q8thsmba6ird2udqnnrociq3hmint.apps.googleusercontent.com"
-     data-context="signin"
-     data-ux_mode="popup"
-     data-callback="handleCredentialResponse"
-     data-auto_prompt="false">
-</div>
-
-<div class="g_id_signin"
-     data-type="standard"
-     data-shape="rectangular"
-     data-theme="filled_black"
-     data-text="signin_with"
-     data-size="large"
-     data-logo_alignment="left">
-    </div>
-  </div>
-  <script>
-  function handleCredentialResponse(response) {
-    console.log("ID Token: ", response.credential);
-    // Envio do token para o servidor validar/autenticar
-  }
-</script>
+    </main>
+    <script src="/js/auth.js"></script>
 </body>
 </html>
