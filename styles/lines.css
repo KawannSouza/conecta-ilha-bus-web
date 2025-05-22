@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #212529;
+}   
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#search-line {
+    border: 2px solid #212529;
+    outline: none;
+    padding: 1rem 2rem;
+    width: 250px;
+    border-radius: 0.8rem;
+    margin-bottom: 2rem;
+}
+
+#search-btn {
+    padding: 1rem;
+    border-radius: 0.8rem;
+    background: #212529;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#search-btn:hover {
+    background: #343a40;
+    padding: 1rem 2rem;
+}
+
+#lines {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#line-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    min-width: 50%;
+    background: #94ff00;
+    padding: 2rem;
+    border-radius: 0.8rem;
+    margin: 1rem;
+    gap: 1rem;
+}
+
+#see-map-btn {
+    padding: 0.4rem;
+    border: none;
+    border-radius: 0.2rem;
+    background: #212529;
+    color: #ffffff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#see-map-btn:hover {
+    background: #343a40;
+    padding: 0.4rem 1rem;
+}
+
+.mapa {
+    display: none;
+    width: 400px;
+    height: 400px;
+}

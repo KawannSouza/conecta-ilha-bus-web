@@ -11,87 +11,105 @@
     />
     <script src="../js/header-cib.js" defer></script>
     <script src="../js/comments.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        const token = localStorage.getItem("token");
+        if (!token) {
+            window.location.href = "/pages/login.html";
+        }
+    </script>
     <title>Fazer Comentário</title>
 </head>
 <body>
-    <header-cib label="<i class='fa-solid fa-user'></i>"></header-cib>
+    <header-cib label="SAIR"></header-cib>
     <main>
         <h2>AVALIE UMA LINHA</h2>
-        <select name="" id="">
-            <option value="linha1">linha 1</option>
-            <option value="linha2">linha 2</option>
-            <option value="linha3">linha 3</option>
-            <option value="linha4">linha 4</option>
-            <option value="linha5">linha 5</option>
+        <select name="" id="select-line">
+            
         </select>
+        <h4>1- Muito Ruim / Não Possui 5- Muito Bom / Possui</h4>
         <div id="forms">
             <div class="questions">
                 <label>Com que frequência você utiliza essa linha?</label>
                 <div class="opcoes">
-                    <input type="radio" name="frequencia" value="Diariamente"> Diariamente<br>
-                    <input type="radio" name="frequencia" value="Algumas vezes por semana"> Algumas vezes por semana<br>
-                    <input type="radio" name="frequencia" value="Raramente"> Raramente
+                    1<input type="radio" name="frequencia" value="1"><br>
+                    2<input type="radio" name="frequencia" value="2"><br>
+                    3<input type="radio" name="frequencia" value="2"><br>
+                    4<input type="radio" name="frequencia" value="2"><br>
+                    5<input type="radio" name="frequencia" value="3">
                 </div>
                 <label>Como você avalia a pontualidade dos ônibus dessa linha?</label>
                 <div class="opcoes">
-                    <input type="radio" name="pontualidade" value="Muito boa"> Muito boa<br>
-                    <input type="radio" name="pontualidade" value="Boa"> Boa<br>
-                    <input type="radio" name="pontualidade" value="Regular"> Regular<br>
-                    <input type="radio" name="pontualidade" value="Ruim"> Ruim<br>
-                    <input type="radio" name="pontualidade" value="Muito ruim"> Muito ruim
+                    1<input type="radio" name="pontualidade" value="1"><br>
+                    2<input type="radio" name="pontualidade" value="2"><br>
+                    3<input type="radio" name="pontualidade" value="3"><br>
+                    4<input type="radio" name="pontualidade" value="4"><br>
+                    5<input type="radio" name="pontualidade" value="5">
                 </div>
                 <label>Como você avalia a lotação dos ônibus?</label>
                 <div class="opcoes">
-                    <input type="radio" name="lotacao" value="Sempre lotado"> Sempre lotado<br>
-                    <input type="radio" name="lotacao" value="Frequentemente cheio"> Frequentemente cheio<br>
-                    <input type="radio" name="lotacao" value="Às vezes cheio"> Às vezes cheio<br>
-                    <input type="radio" name="lotacao" value="Raramente cheio"> Raramente cheio<br>
-                    <input type="radio" name="lotacao" value="Sempre tranquilo"> Sempre tranquilo
+                    1<input type="radio" name="lotacao" value="1"><br>
+                    2<input type="radio" name="lotacao" value="2"><br>
+                    3<input type="radio" name="lotacao" value="3"> <br>
+                    4<input type="radio" name="lotacao" value="4"><br>
+                    5<input type="radio" name="lotacao" value="5">
                 </div>
                 <label>Como está o estado de conservação dos ônibus?</label>
                 <div class="opcoes">
-                    <input type="radio" name="conservacao" value="Excelente"> Excelente<br>
-                    <input type="radio" name="conservacao" value="Bom"> Bom<br>
-                    <input type="radio" name="conservacao" value="Regular"> Regular<br>
-                    <input type="radio" name="conservacao" value="Ruim"> Ruim
+                    1<input type="radio" name="conservacao" value="1"><br>
+                    2<input type="radio" name="conservacao" value="2"><br>
+                    3<input type="radio" name="conservacao" value="3"><br>
+                    4<input type="radio" name="conservacao" value="4"><br>
+                    5<input type="radio" name="conservacao" value="5">
                 </div>
                 <label>Os motoristas e cobradores são educados?</label>
                 <div class="opcoes">
-                    <input type="radio" name="educacao" value="Sim"> Sim<br>
-                    <input type="radio" name="educacao" value="Mais ou menos"> Mais ou menos<br>
-                    <input type="radio" name="educacao" value="Não"> Não
+                    1<input type="radio" name="educacao" value="1"><br>
+                    2<input type="radio" name="educacao" value="2"><br>
+                    3<input type="radio" name="educacao" value="3"><br>
+                    4<input type="radio" name="educacao" value="4"><br>
+                    5<input type="radio" name="educacao" value="5">
                 </div>
             </div>
             <div class="questions">
                 <label>O ônibus possui recursos de acessibilidade como rampa ou elevador para cadeirantes?</label>
                 <div class="opcoes">
-                    <input type="radio" name="rampa" value="Sim"> Sim<br>
-                    <input type="radio" name="rampa" value="Não"> Não<br>
-                    <input type="radio" name="rampa" value="Não sei informar"> Não sei informar
+                    1<input type="radio" name="rampa" value="1"><br>
+                    2<input type="radio" name="rampa" value="2"><br>
+                    3<input type="radio" name="rampa" value="3"><br>
+                    4<input type="radio" name="rampa" value="4"><br>
+                    5<input type="radio" name="rampa" value="5">
                 </div>
                 <label>A sinalização (visual ou sonora) é suficiente para orientar pessoas com deficiência?</label>
                 <div class="opcoes">
-                    <input type="radio" name="sinalizacao" value="Sim, é adequada"> Sim, é adequada<br>
-                    <input type="radio" name="sinalizacao" value="Parcialmente adequada"> Parcialmente adequada<br>
-                    <input type="radio" name="sinalizacao" value="Inadequada ou inexistente"> Inadequada ou inexistente
+                    1<input type="radio" name="sinalizacao" value="1"><br>
+                    2<input type="radio" name="sinalizacao" value="2"><br>
+                    3<input type="radio" name="sinalizacao" value="3"><br>
+                    4<input type="radio" name="sinalizacao" value="4"><br>
+                    5<input type="radio" name="sinalizacao" value="5">
                 </div>
                 <label>Os motoristas e cobradores demonstram preparo para lidar com passageiros com condições especiais (como autismo, deficiência auditiva ou visual)?</label>
                 <div class="opcoes">
-                    <input type="radio" name="preparo" value="Sim, são preparados e atenciosos"> Sim, são preparados e atenciosos<br>
-                    <input type="radio" name="preparo" value="Às vezes demonstram preparo"> Às vezes demonstram preparo<br>
-                    <input type="radio" name="preparo" value="Não demonstram preparo"> Não demonstram preparo
+                    1<input type="radio" name="preparo" value="1"><br>
+                    2<input type="radio" name="preparo" value="2"><br>
+                    3<input type="radio" name="preparo" value="3"><br>
+                    4<input type="radio" name="preparo" value="4"><br>
+                    5<input type="radio" name="preparo" value="5"> 
                 </div>
                 <label>O ambiente do ônibus é adequado para pessoas com hipersensibilidade sensorial (luz, som, cheiros)?</label>
                 <div class="opcoes">
-                    <input type="radio" name="ambiente" value="Sim, é adequado"> Sim, é adequado<br>
-                    <input type="radio" name="ambiente" value="Parcialmente adequado"> Parcialmente adequado<br>
-                    <input type="radio" name="ambiente" value="Não é adequado"> Não é adequado
+                    1<input type="radio" name="ambiente" value="1"><br>
+                    2<input type="radio" name="ambiente" value="2"><br>
+                    3<input type="radio" name="ambiente" value="3"><br>
+                    4<input type="radio" name="ambiente" value="4"><br>
+                    5<input type="radio" name="ambiente" value="5"> 
                 </div>
             </div>
         </div>
         <label for="comments">Escreva um comentário:</label>
         <textarea name="comments" id="comments"></textarea>
-        <button id="submit-btn">Enviar Comentário</button>
+        <button id="submit-btn" onclick="submitFeedback()">Enviar Comentário</button>
     </main>
+    <script src="/js/api.js"></script>
 </body>
 </html>

@@ -8,10 +8,52 @@
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" 
         crossorigin="anonymous" referrerpolicy="no-referrer" 
     />
+    <link rel="stylesheet" href="/styles/index.css">
     <script src="js/header-cib.js" defer></script>
     <title>Conecta Ilha Bus</title>
 </head>
 <body>
-    <header-cib label="ENTRAR" icon="assets/bus.svg"></header-cib>
+    <header id="index-header">
+        <i class="fa-solid fa-bus"></i>
+        <button id="login-btn" onclick="window.location.href='/pages/login.html'">ENTRAR</button>
+    </header>
+    <main>
+        <h1>Conecta Ilha Bus</h1>
+        <p id="resumo">
+            A Plataforma Conecta Ilha Bus é uma aplicação web criada para melhorar 
+            o acesso às informações sobre as linhas de ônibus da cidade, especialmente em locais onde 
+            há escassez de dados oficiais ou atualizações em tempo real. Voltada para os usuários do 
+            transporte público, a plataforma permite o cadastro e login de pessoas interessadas em 
+            contribuir com avaliações sobre as condições dos veículos, frequência de atrasos, lotação 
+            e acessibilidade. Além disso, os usuários podem consultar linhas por nome e código da linha, visualizar 
+            comentários da comunidade e deixar seus próprios feedbacks. O objetivo é criar uma base de dados útil, 
+            construída de forma colaborativa, com uma interface leve, clara e intuitiva. A iniciativa é voltada para 
+            cidadãos que usam ônibus no dia a dia, pessoas com deficiência que precisam de informações sobre acessibilidade 
+            e moradores que desejam participar ativamente da melhoria da mobilidade urbana.
+        </p>
+        <button id="register-btn" onclick="window.location.href='/pages/register.html'">
+            Fazer Registro
+        </button>
+        <div class="cards-container">
+            <section class="card">
+                <i class="fa-solid fa-star"></i>
+                Avalie a linha que você utiliza
+            </section>
+            <section class="card">
+                <i class="fa-regular fa-comments"></i>
+                Veja o que outros usuários estão dizendo
+            </section>
+        </div>
+        <div class="cards-container">
+            <section class="card">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                Pesquise por linhas
+            </section>
+            <section class="card">
+                <i class="fa-solid fa-route"></i>
+                Veja as rotas das linhas
+            </section>
+        </div>
+    </main>
 </body>
 </html>
